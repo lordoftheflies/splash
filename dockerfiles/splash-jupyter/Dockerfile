@@ -1,4 +1,4 @@
-FROM scrapinghub/splash:master
+FROM lordoftheflies/splash:master
 # XXX: after each release a new branch named X.Y should be created,
 # and FROM should be changed to FROM scrapinghub/splash:X.Y
 
@@ -13,7 +13,7 @@ RUN apt-get update -q && \
         python3-openssl \
         libsqlite3-dev
 
-RUN pip3 install ipython[notebook]==5.4.0 notebook==5.0.0
+RUN pip3 install ipython[notebook]==5.4.0 notebook==5.0.0 ipython-sql
 
 RUN python3 -m splash.kernel install && \
     echo '#!/bin/bash\nSPLASH_ARGS="$@" jupyter notebook --allow-root --no-browser --NotebookApp.iopub_data_rate_limit=10000000000 --port=8888 --ip=*' > start-notebook.sh && \
