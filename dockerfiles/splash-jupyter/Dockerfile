@@ -1,4 +1,4 @@
-FROM lordoftheflies/splash:master
+FROM scrapinghub/splash:master
 # XXX: after each release a new branch named X.Y should be created,
 # and FROM should be changed to FROM scrapinghub/splash:X.Y
 
